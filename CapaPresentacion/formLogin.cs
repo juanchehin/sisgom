@@ -39,7 +39,7 @@ namespace CapaPresentacion
             //Evaluar si existe el Usuario
             if (Datos != "Ok")
             {
-                MessageBox.Show("Error de login", "Gomeria Leon", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de login", "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

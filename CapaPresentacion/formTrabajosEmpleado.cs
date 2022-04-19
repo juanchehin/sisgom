@@ -115,7 +115,7 @@ namespace CapaPresentacion
         try
         {
             DialogResult Opcion;
-            Opcion = MessageBox.Show("Realmente Desea Eliminar el/los productos", "Gomeria Leon", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            Opcion = MessageBox.Show("Realmente Desea Eliminar el/los productos", "SisGom", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (Opcion == DialogResult.OK)
             {
@@ -157,7 +157,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Confirmación
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "Gomeria Leon", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -165,7 +165,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Gomeria Leon", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button1_Click(object sender, EventArgs e)

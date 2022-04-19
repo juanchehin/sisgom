@@ -37,10 +37,10 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAyuda = new System.Windows.Forms.Button();
+            this.ttAyuda = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ttAyuda = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,17 +120,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso al sistema";
             // 
-            // btnAyuda
-            // 
-            this.btnAyuda.Image = global::CapaPresentacion.Properties.Resources.info;
-            this.btnAyuda.Location = new System.Drawing.Point(13, 397);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(43, 41);
-            this.btnAyuda.TabIndex = 12;
-            this.btnAyuda.UseVisualStyleBackColor = true;
-            this.btnAyuda.Click += new System.EventHandler(this.button1_Click);
-            this.btnAyuda.MouseHover += new System.EventHandler(this.button1_MouseHover);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::CapaPresentacion.Properties.Resources.login;
@@ -143,13 +132,25 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.FB_IMG_1576455035187_2_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.logo2;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 210);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.Image = global::CapaPresentacion.Properties.Resources.info;
+            this.btnAyuda.Location = new System.Drawing.Point(13, 397);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(43, 41);
+            this.btnAyuda.TabIndex = 12;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.button1_Click);
+            this.btnAyuda.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // formLogin
             // 
@@ -164,7 +165,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formLogin";
             this.Text = "                                                                                 " +
-    "                 ..:: Login - Leon Gomeria ::..";
+    "                 ..:: Login - SisGom ::..";
             this.Load += new System.EventHandler(this.formLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
