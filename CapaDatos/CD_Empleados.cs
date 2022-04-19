@@ -87,6 +87,7 @@ namespace CapaDatos
             string rpta = "";
             try
             {
+
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_empleado";
@@ -97,8 +98,6 @@ namespace CapaDatos
                 pNombre.Size = 60;
                 pNombre.Value = Empleado.Nombre;
                 comando.Parameters.Add(pNombre);
-
-                // Console.WriteLine("pNombre es : " + pNombre.Value);
 
                 MySqlParameter pApellidos = new MySqlParameter();
                 pApellidos.ParameterName = "@pApellidos";
@@ -117,7 +116,7 @@ namespace CapaDatos
                 MySqlParameter pDireccion = new MySqlParameter();
                 pDireccion.ParameterName = "@pDireccion";
                 pDireccion.MySqlDbType = MySqlDbType.VarChar;
-                pDireccion.Size = 40;
+                pDireccion.Size = 60;
                 pDireccion.Value = Empleado.Direccion;
                 comando.Parameters.Add(pDireccion);
 
@@ -131,16 +130,23 @@ namespace CapaDatos
                 MySqlParameter pFechaNac = new MySqlParameter();
                 pFechaNac.ParameterName = "@pFechaNac";
                 pFechaNac.MySqlDbType = MySqlDbType.VarChar;
-                pFechaNac.Size = 40;
+                pFechaNac.Size = 60;
                 pFechaNac.Value = Empleado.FechaNac;
                 comando.Parameters.Add(pFechaNac);
 
+                // Console.WriteLine("rpta es : " + rpta);
 
-                // Console.WriteLine("el comando es : " + comando.CommandText[0]);
-                //Ejecutamos nuestro comando
+                rpta = (string)comando.ExecuteScalar();
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
-
+                if (rpta == "OK")
+                {
+                    rpta = "Ok";
+                }
+                else
+                {
+                    rpta = "NO se Ingreso el Registro";
+                }
+                // == "Ok" ? "OK" : "NO se Ingreso el Registro";
 
             }
             catch (Exception ex)
@@ -151,10 +157,11 @@ namespace CapaDatos
             {
                 conexion.CerrarConexion();
             }
+
             return rpta;
 
         }
-        
+
         // Metodo ELIMINAR Empleado (da de baja)
         public string Eliminar(CD_Empleados Empleado)
         {

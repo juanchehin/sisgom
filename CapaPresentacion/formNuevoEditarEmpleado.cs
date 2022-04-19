@@ -108,7 +108,7 @@ namespace CapaPresentacion
                             this.txtDNI.Text.Trim(),this.txtDireccion.Text.Trim(), this.txtTelefono.Text.Trim(), fecha);
                     }
 
-                    if (rpta.Equals("OK"))
+                    if (rpta.Equals("Ok"))
                     {
                         if (this.IsNuevo)
                         {
