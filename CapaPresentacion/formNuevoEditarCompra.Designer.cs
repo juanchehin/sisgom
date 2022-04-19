@@ -34,6 +34,7 @@
             this.lblEditarNuevo = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbProductos = new System.Windows.Forms.ComboBox();
             this.cbProveedores = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbProductos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -49,11 +49,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 57);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
@@ -101,6 +102,14 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Compra";
+            // 
+            // cbProductos
+            // 
+            this.cbProductos.FormattingEnabled = true;
+            this.cbProductos.Location = new System.Drawing.Point(107, 29);
+            this.cbProductos.Name = "cbProductos";
+            this.cbProductos.Size = new System.Drawing.Size(214, 21);
+            this.cbProductos.TabIndex = 14;
             // 
             // cbProveedores
             // 
@@ -164,14 +173,6 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // cbProductos
-            // 
-            this.cbProductos.FormattingEnabled = true;
-            this.cbProductos.Location = new System.Drawing.Point(107, 29);
-            this.cbProductos.Name = "cbProductos";
-            this.cbProductos.Size = new System.Drawing.Size(214, 21);
-            this.cbProductos.TabIndex = 14;
             // 
             // formNuevoEditarCompra
             // 
