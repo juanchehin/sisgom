@@ -127,14 +127,13 @@ namespace CapaDatos
                 pTelefono.Value = Cliente.Telefono;
                 comando.Parameters.Add(pTelefono);
 
-                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "No se edito el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "Ok" : "No se edito el Registro";
 
             }
             catch (Exception ex)
             {
 
                 rpta = ex.Message;
-                Console.WriteLine("rpta es : " + rpta);
             }
             finally
             {
@@ -181,7 +180,7 @@ namespace CapaDatos
                 // Console.WriteLine("el comando es : " + comando.CommandText[0]);
                 //Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = comando.ExecuteScalar().ToString();
 
 
             }
@@ -260,9 +259,6 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entro en el catch y tabla es en capa datos" + tabla);
-                Console.WriteLine("Entro en el catch y ex es en capa datos" + ex.Message);
-
                 tabla = null;
             }
             return tabla;

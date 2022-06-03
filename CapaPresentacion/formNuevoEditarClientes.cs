@@ -95,7 +95,7 @@ namespace CapaPresentacion
                         rpta = CN_Clientes.Editar(this.IdCliente, this.txtTitular.Text.Trim(), this.txtTransporte.Text.Trim(), this.txtTelefono.Text.Trim());
                     }
 
-                    if (rpta.Equals("OK"))
+                    if (rpta.Equals("Ok"))
                     {
                         if (this.IsNuevo)
                         {
