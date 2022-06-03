@@ -37,6 +37,8 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -94,9 +96,8 @@
             this.lblApellidoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidoNombre.Location = new System.Drawing.Point(154, 27);
             this.lblApellidoNombre.Name = "lblApellidoNombre";
-            this.lblApellidoNombre.Size = new System.Drawing.Size(46, 18);
+            this.lblApellidoNombre.Size = new System.Drawing.Size(0, 18);
             this.lblApellidoNombre.TabIndex = 9;
-            this.lblApellidoNombre.Text = "label6";
             this.lblApellidoNombre.Click += new System.EventHandler(this.lblApellidoNombre_Click);
             // 
             // lblDireccion
@@ -105,9 +106,8 @@
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.Location = new System.Drawing.Point(154, 63);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(46, 18);
+            this.lblDireccion.Size = new System.Drawing.Size(0, 18);
             this.lblDireccion.TabIndex = 10;
-            this.lblDireccion.Text = "label7";
             // 
             // lblTelefono
             // 
@@ -115,12 +115,13 @@
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.Location = new System.Drawing.Point(154, 100);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(46, 18);
+            this.lblTelefono.Size = new System.Drawing.Size(0, 18);
             this.lblTelefono.TabIndex = 11;
-            this.lblTelefono.Text = "label8";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblDNI);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lblApellidoNombre);
             this.groupBox1.Controls.Add(this.lblDireccion);
             this.groupBox1.Controls.Add(this.lblTelefono);
@@ -129,14 +130,33 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(91, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(707, 134);
+            this.groupBox1.Size = new System.Drawing.Size(707, 166);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del empleado";
             // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.Location = new System.Drawing.Point(154, 137);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(0, 17);
+            this.lblDNI.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(13, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "DNI :";
+            // 
             // dtFechaInicio
             // 
-            this.dtFechaInicio.Location = new System.Drawing.Point(248, 175);
+            this.dtFechaInicio.Location = new System.Drawing.Point(248, 184);
             this.dtFechaInicio.MaxDate = new System.DateTime(2199, 11, 29, 0, 0, 0, 0);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(200, 20);
@@ -156,7 +176,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(104, 175);
+            this.label2.Location = new System.Drawing.Point(104, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 12;
@@ -329,5 +349,7 @@
         private System.Windows.Forms.ToolTip ttPreviaImpresion;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblSubTotal;
+        private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.Label label6;
     }
 }

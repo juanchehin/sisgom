@@ -45,7 +45,6 @@ namespace CapaPresentacion
         {
             respuesta = objetoCN.MostrarEmpleado(IdEmpleado);
 
-            Console.WriteLine("Respuesta es ; " + respuesta.Rows.Count);
             foreach (DataRow row in respuesta.Rows)
             {
                 IdEmpleado = Convert.ToInt32(row["IdEmpleado"]);

@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using CapaNegocio;
+using System.Data;
 
 namespace CapaPresentacion
 {
@@ -11,11 +12,20 @@ namespace CapaPresentacion
         private int parametroTE;    // IdEmpleado
         private int total = 0;
         CN_TrabajosEmpleado objetoCN = new CN_TrabajosEmpleado();
+        CN_Empleados objetoCN_emp = new CN_Empleados();
         private DateTime FechaFin = DateTime.Today; // Fecha actual
         private DateTime FechaInicio = DateTime.Today.AddDays(-7);// Una semana antes
 
         private string imprimirFechaInicio;
         private string imprimirFechaFin;
+
+
+        private int IdEmpleado;
+        private string Nombre;
+        private string Apellidos;
+        private string DNI;
+        private string Direccion;
+        private string Telefono;
 
         public formTrabajosEmpleado(int parametro)
         {
@@ -30,6 +40,7 @@ namespace CapaPresentacion
             this.FechaInicio = dtFechaInicio.Value;
             this.FechaFin = dtFechaFin.Value;
             //MostrarTrabajosEmpleado(this.parametroTE, this.FechaInicio, this.FechaFin);
+            CargarDatos(this.parametroTE);
             // dtFechaInicio.Focus();
         }
 
@@ -90,6 +101,30 @@ namespace CapaPresentacion
             this.lblTotal.Text = this.total.ToString();
         }
 
+        // Carga los datos (apellido,nombre,direccion) en el formulario
+        private void CargarDatos(int IdEmpleado)
+        {
+
+            var respuesta = objetoCN_emp.MostrarEmpleado(IdEmpleado);
+
+
+            foreach (DataRow row in respuesta.Rows)
+            {
+                IdEmpleado = Convert.ToInt32(row["IdEmpleado"]);
+                Nombre = Convert.ToString(row["Nombre"]);
+                Apellidos = Convert.ToString(row["Apellidos"]);
+                DNI = Convert.ToString(row["DNI"]);
+                Direccion = Convert.ToString(row["Direccion"]);
+                Telefono = Convert.ToString(row["Telefono"]);
+                
+                lblApellidoNombre.Text = Apellidos + " , " + Nombre;
+                lblDireccion.Text = Direccion;
+                lblTelefono.Text = Telefono;
+                lblDNI.Text = DNI;
+
+            }
+
+        }
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.FechaInicio = dtFechaInicio.Value;
