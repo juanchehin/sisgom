@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
-
-using System.IO;
-using System.Windows.Forms;
-
 using CapaNegocio;
 
 namespace CapaPresentacion
@@ -27,8 +17,6 @@ namespace CapaPresentacion
         private string imprimirFechaInicio;
         private string imprimirFechaFin;
 
-
-
         public formTrabajosEmpleado(int parametro)
         {
             InitializeComponent();
@@ -41,7 +29,7 @@ namespace CapaPresentacion
         {
             this.FechaInicio = dtFechaInicio.Value;
             this.FechaFin = dtFechaFin.Value;
-            MostrarTrabajosEmpleado(this.parametroTE, this.FechaInicio, this.FechaFin);
+            //MostrarTrabajosEmpleado(this.parametroTE, this.FechaInicio, this.FechaFin);
             // dtFechaInicio.Focus();
         }
 
@@ -115,7 +103,7 @@ namespace CapaPresentacion
         try
         {
             DialogResult Opcion;
-            Opcion = MessageBox.Show("Realmente Desea Eliminar el/los productos", "SisGom", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            Opcion = MessageBox.Show("Realmente Desea Eliminar el/los trabajos", "SisGom", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (Opcion == DialogResult.OK)
             {
@@ -185,7 +173,7 @@ namespace CapaPresentacion
 
         private void DVPrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Bitmap bmp = Properties.Resources.logo;
+            Bitmap bmp = Properties.Resources.logo_reducido;
             Image newImage = bmp;
             e.Graphics.DrawImage(newImage, 25 ,25, newImage.Width,newImage.Height);
             e.Graphics.DrawString("Apellidos y Nombres : " + lblApellidoNombre.Text, new  Font("Arial",20,FontStyle.Regular),Brushes.Black,new Point(25,100));
