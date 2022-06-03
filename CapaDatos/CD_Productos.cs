@@ -177,7 +177,10 @@ namespace CapaDatos
                 //Ejecutamos nuestro comando
 
                 // ExecuteNonQuery devuelve el numero de filas afectadas
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                //rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
+
                 comando.Parameters.Clear();
 
             }
