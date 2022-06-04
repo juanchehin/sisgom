@@ -24,10 +24,10 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://juanchehin.github.io/CR/</SupportUrl>
-    <ProductName>Leon Gomeria</ProductName>
-    <PublisherName>Leon Gomeria</PublisherName>
-    <SuiteName>Leon Gomeria</SuiteName>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ProductName>SisGom </ProductName>
+    <PublisherName>SisGom </PublisherName>
+    <SuiteName>SisGom </SuiteName>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -65,7 +65,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon>logo - copia.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -394,6 +394,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logo - copia.ico" />
     <Content Include="logo.ico" />
     <None Include="Resources\logo_reducido.bmp" />
     <None Include="Resources\Image1.png" />

@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class CD_Conexion
     {
-        MySqlConnection Con = new MySqlConnection("datasource =localhost;username = root;password = '';database=gomeria");
+        MySqlConnection Con = new MySqlConnection("datasource =localhost;username = sisgom;password = '';database=gomeria");
 
         public CD_Conexion()
         {
