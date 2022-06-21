@@ -69,6 +69,7 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
             string rpta = "";
             // Validaciones
             try

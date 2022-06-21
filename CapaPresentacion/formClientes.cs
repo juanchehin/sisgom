@@ -34,7 +34,6 @@ namespace CapaPresentacion
             dataListadoClientes.DataSource = objetoCN.MostrarClientes();
             dataListadoClientes.Columns[0].Visible = false;
             lblTotalClientes.Text = "Total de Registros: " + Convert.ToString(dataListadoClientes.Rows.Count);
-            // this.banderaFormularioHijo = false;
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -79,7 +78,6 @@ namespace CapaPresentacion
 
         private void BuscarCliente()
         {
-            Console.WriteLine("this.txtBuscar.Text es " + this.txtBuscar.Text);
             this.dataListadoClientes.DataSource = objetoCN.BuscarCliente(this.txtBuscar.Text);
             // this.OcultarColumnas();
             lblTotalClientes.Text = "Total de Registros: " + Convert.ToString(dataListadoClientes.Rows.Count);
@@ -92,7 +90,6 @@ namespace CapaPresentacion
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("this.IdCliente en click nuevo es  : " + this.IdCliente);
             formNuevoEditarClientes frm = new formNuevoEditarClientes(this.IdCliente, true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
@@ -106,7 +103,6 @@ namespace CapaPresentacion
                 int selectedrowindex = dataListadoClientes.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoClientes.Rows[selectedrowindex];
                 this.IdCliente = Convert.ToInt32(selectedRow.Cells["IdCliente"].Value);
-                Console.WriteLine("El id IdCliente es " + this.IdCliente);
             }
         }
 

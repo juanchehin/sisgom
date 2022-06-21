@@ -17,11 +17,9 @@ namespace CapaPresentacion
         CN_Productos objetoCN = new CN_Productos();
 
         private int  IdProducto;
-        // public bool banderaFormularioHijo = false;
 
         public formProductos()
         {
-            // Console.WriteLine("Ingresa en el constructor");
             InitializeComponent();
             MostrarProductos();
         }
@@ -29,22 +27,13 @@ namespace CapaPresentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             MostrarProductos();
-            // Console.WriteLine("Ingresa en el load");
-            //this.botonEditarListado.Enabled = false;
-            //this.btnEliminar.Enabled = false;
         }
         public void MostrarProductos()
         {
-            // Console.WriteLine("Ahora va el mostrar productos");
             dataListadoProductos.DataSource = objetoCN.MostrarProd();
             dataListadoProductos.Columns[0].Visible = false;
             lblTotalProductos.Text = "Total de Registros: " + Convert.ToString(dataListadoProductos.Rows.Count);
-            // this.banderaFormularioHijo = false;
         }
-
-
-
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -103,7 +92,6 @@ namespace CapaPresentacion
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("this.IdProducto en click nuevo es  : " + this.IdProducto);
             formNuevoEditarProducto frm = new formNuevoEditarProducto(this.IdProducto,true);
             frm.MdiParent = this.MdiParent;
             frm.Show();

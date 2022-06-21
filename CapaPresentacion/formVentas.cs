@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocio;
@@ -28,11 +21,9 @@ namespace CapaPresentacion
 
         public void MostrarVentas()
         {
-            // Console.WriteLine("Ahora va el mostrar productos");
             dataListadoVentas.DataSource = objetoCN.MostrarVentas();
             dataListadoVentas.Columns[0].Visible = false;
             lblTotalVentas.Text = "Total de Registros: " + Convert.ToString(dataListadoVentas.Rows.Count);
-            // this.banderaFormularioHijo = false;
         }
 
 
@@ -60,7 +51,6 @@ namespace CapaPresentacion
                 if (Opcion == DialogResult.OK)
                 {
                     CN_Ventas.Eliminar(this.IdVenta);
-                    // this.MostrarProductos();
                 }
                 this.MensajeOk("Se elimino de forma correcta el registro");
             }
@@ -85,7 +75,6 @@ namespace CapaPresentacion
                 int selectedrowindex = dataListadoVentas.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoVentas.Rows[selectedrowindex];
                 this.IdVenta = Convert.ToInt32(selectedRow.Cells["IdVenta"].Value);
-                // Console.WriteLine("El idVEnta es " + this.IdVenta);
             }
         }
 

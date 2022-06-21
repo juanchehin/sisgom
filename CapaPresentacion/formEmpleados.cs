@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-//Agregados
 using CapaNegocio;
-// using System.DateTime;
 
 namespace CapaPresentacion
 {
@@ -35,8 +26,6 @@ namespace CapaPresentacion
             // Oculto el IdEmpleado. Lo puedo seguir usando como parametro de eliminacion
             dataListadoEmpleados.Columns[0].Visible = false;
             lblTotalEmpleados.Text = "Total de Registros: " + Convert.ToString(dataListadoEmpleados.Rows.Count);
-
-            // dataListadoEmpleados.Columns[0].ReadOnly = true;
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
@@ -81,7 +70,6 @@ namespace CapaPresentacion
 
         private void BuscarEmpleado()
         {
-            Console.WriteLine("this.txtBuscar.Text es " + this.txtBuscar.Text);
             this.dataListadoEmpleados.DataSource = objetoCN.BuscarEmpleado(this.txtBuscar.Text);
             // this.OcultarColumnas();
             lblTotalEmpleados.Text = "Total de Registros: " + Convert.ToString(dataListadoEmpleados.Rows.Count);
@@ -89,7 +77,6 @@ namespace CapaPresentacion
 
         private void btnNuevoEmpleado_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("this.IdEmpleado en click nuevo es  : " + this.IdEmpleado);
             formNuevoEditarEmpleado frm = new formNuevoEditarEmpleado(this.IdEmpleado, true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
