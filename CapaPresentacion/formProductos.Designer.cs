@@ -41,6 +41,7 @@
             this.lblTotalProductos = new System.Windows.Forms.Label();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnActualizarPrecios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoProductos)).BeginInit();
@@ -154,7 +155,7 @@
             this.btnRefrescar.Image = global::CapaPresentacion.Properties.Resources.refresh;
             this.btnRefrescar.Location = new System.Drawing.Point(865, 121);
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(33, 31);
+            this.btnRefrescar.Size = new System.Drawing.Size(33, 42);
             this.btnRefrescar.TabIndex = 13;
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
@@ -168,11 +169,21 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Busqueda por codigo o producto";
             // 
+            // btnActualizarPrecios
+            // 
+            this.btnActualizarPrecios.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarPrecios.Image")));
+            this.btnActualizarPrecios.Location = new System.Drawing.Point(801, 121);
+            this.btnActualizarPrecios.Name = "btnActualizarPrecios";
+            this.btnActualizarPrecios.Size = new System.Drawing.Size(46, 42);
+            this.btnActualizarPrecios.TabIndex = 15;
+            this.btnActualizarPrecios.UseVisualStyleBackColor = true;
+            // 
             // formProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 564);
+            this.Controls.Add(this.btnActualizarPrecios);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.lblTotalProductos);
@@ -211,6 +222,7 @@
         private System.Windows.Forms.Label lblTotalProductos;
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnActualizarPrecios;
     }
 }
 
