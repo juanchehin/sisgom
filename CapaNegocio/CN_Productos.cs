@@ -70,17 +70,28 @@ namespace CapaNegocio
             Obj.Descripcion = Descripcion;
             Obj.Stock = Stock;
 
-            // Console.WriteLine("Produco.IdProducto es 3 : " + IdProducto);
-
             return Obj.Editar(Obj);
         }
 
         public DataTable BuscarProducto(string textobuscar)
         {
-            Console.WriteLine("textobuscar en capa negocio es : " + textobuscar);
             CD_Productos Obj = new CD_Productos();
             Obj.TextoBuscar = textobuscar;
             return Obj.BuscarProducto(Obj);
+        }
+
+        public static string ActualizacionPorcentual(decimal pPorcentaje,int desde,int hasta)
+        {
+            CD_Productos Obj = new CD_Productos();
+
+            return Obj.ActualizacionPorcentual(pPorcentaje,desde,hasta);
+        }
+
+        public static string ActualizacionLineal(decimal pValor, int desde, int hasta)
+        {
+            CD_Productos Obj = new CD_Productos();
+
+            return Obj.ActualizacionLineal(pValor,desde,hasta);
         }
 
     }

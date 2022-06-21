@@ -353,5 +353,98 @@ namespace CapaDatos
             return tabla;
 
         }
+
+        public string ActualizacionPorcentual(decimal porcentaje,int desde,int hasta)
+        {
+            string rpta = "";
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_incremento_porcentual";
+
+                MySqlParameter pPorcentaje = new MySqlParameter();
+                pPorcentaje.ParameterName = "@pPorcentaje";
+                pPorcentaje.MySqlDbType = MySqlDbType.Decimal;
+                pPorcentaje.Value = porcentaje;
+                comando.Parameters.Add(pPorcentaje);
+
+                MySqlParameter pDesde = new MySqlParameter();
+                pDesde.ParameterName = "@pDesde";
+                pDesde.MySqlDbType = MySqlDbType.Decimal;
+                pDesde.Value = desde;
+                comando.Parameters.Add(pDesde);
+
+                MySqlParameter pHasta = new MySqlParameter();
+                pHasta.ParameterName = "@pHasta";
+                pHasta.MySqlDbType = MySqlDbType.Decimal;
+                pHasta.Value = hasta;
+                comando.Parameters.Add(pHasta);
+
+                Console.WriteLine("rpta es : " + rpta);
+
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
+
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+            return rpta;
+
+        }
+
+        public string ActualizacionLineal(decimal valor, int desde, int hasta)
+        {
+            string rpta = "";
+            try
+            {
+
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_incremento_lineal";
+
+                MySqlParameter pValor = new MySqlParameter();
+                pValor.ParameterName = "@pValor";
+                pValor.MySqlDbType = MySqlDbType.Decimal;
+                pValor.Value = valor;
+                comando.Parameters.Add(pValor);
+
+                MySqlParameter pDesde = new MySqlParameter();
+                pDesde.ParameterName = "@pDesde";
+                pDesde.MySqlDbType = MySqlDbType.Decimal;
+                pDesde.Value = desde;
+                comando.Parameters.Add(pDesde);
+
+                MySqlParameter pHasta = new MySqlParameter();
+                pHasta.ParameterName = "@pHasta";
+                pHasta.MySqlDbType = MySqlDbType.Decimal;
+                pHasta.Value = hasta;
+                comando.Parameters.Add(pHasta);
+
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
+
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+            return rpta;
+
+        }
     }
 }

@@ -18,11 +18,9 @@ namespace CapaPresentacion
         CN_Trabajos objetoCN_trabajos = new CN_Trabajos();
 
         private int IdEmpleado;
-        // bool IsNuevo = false;
 
         private DataTable respuesta;
         private DataTable respuesta_trabajos;
-
 
         private string Nombre;
         private string Apellidos;
@@ -33,7 +31,6 @@ namespace CapaPresentacion
 
         public formAgregarTrabajoEmpleado(int parametro)
         {
-            Console.WriteLine("EL parametro recibido en agregar trabajo es : " + parametro);
             this.IdEmpleado = parametro;
             InitializeComponent();
 
@@ -64,19 +61,15 @@ namespace CapaPresentacion
 
         private void MostrarEmpleado(int IdEmpleado)
         {
-            Console.WriteLine("EL IdEmpleado recibido en agregar trabajo mostrar emp es : " + IdEmpleado);
             respuesta = objetoCN.MostrarEmpleado(IdEmpleado);
 
-            Console.WriteLine("Respuesta es ; " + respuesta.Rows.Count);
             foreach (DataRow row in respuesta.Rows)
             {
 
                 Nombre = Convert.ToString(row["Nombre"]);
-                Apellidos = Convert.ToString(row["Apellidos"]);
-                
+                Apellidos = Convert.ToString(row["Apellidos"]);                
 
                 lblNombreEmpleado.Text = Nombre + "  " + Apellidos;
-
 
             }
         }
@@ -96,7 +89,6 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    Console.WriteLine("En insertar TE btnGuardar_Click 2");
                     var año = this.dtFecha.Value.Year;
                     var mes = this.dtFecha.Value.Month;
                     var dia = this.dtFecha.Value.Day;

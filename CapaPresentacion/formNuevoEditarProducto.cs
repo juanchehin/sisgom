@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocio;
@@ -31,7 +25,6 @@ namespace CapaPresentacion
 
         public formNuevoEditarProducto(int parametro,bool IsNuevoEditar)
         {
-            Console.WriteLine("El parametro es : " + parametro);
             InitializeComponent();
             this.IdProducto = parametro;
             this.bandera = IsNuevoEditar;
@@ -66,11 +59,8 @@ namespace CapaPresentacion
         {
             respuesta = objetoCN.MostrarProducto(IdProducto);
 
-            Console.WriteLine("Respuesta es ; " + respuesta.Rows.Count );
             foreach (DataRow row in respuesta.Rows)
             {
-                Console.WriteLine("row es :" + row["Producto"]);
-
                 IdProducto = Convert.ToInt32(row["IdProducto"]);
                 Producto = Convert.ToString(row["Producto"]);
                 Codigo = Convert.ToString(row["Codigo"]);

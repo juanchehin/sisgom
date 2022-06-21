@@ -27,7 +27,6 @@ namespace CapaPresentacion
 
         private void MostrarTrabajos()
         {
-            Console.WriteLine("Entro en mostrar trabajos");
             dataListadoTrabajos.DataSource = objetoCN.MostrarTrabajos();
             // Oculto el IdProducto. Lo puedo seguir usando como parametro de eliminacion
             dataListadoTrabajos.Columns[0].Visible = false;
