@@ -102,7 +102,6 @@ namespace CapaPresentacion
         private void BuscarTrabajo()
         {
             this.dataListadoTrabajos.DataSource = objetoCN.BuscarTrabajo(this.txtBuscar.Text);
-            // this.OcultarColumnas();
             lblTotalTrabajos.Text = "Total de Registros: " + Convert.ToString(dataListadoTrabajos.Rows.Count);
         }
 
@@ -111,7 +110,6 @@ namespace CapaPresentacion
             formNuevoEditarTrabajo frm = new formNuevoEditarTrabajo(this.IdTrabajo, true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
-            // this.Close();
         }
 
         private void dataListadoTrabajos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -124,7 +122,6 @@ namespace CapaPresentacion
             formNuevoEditarTrabajo frm = new formNuevoEditarTrabajo(this.IdTrabajo, false);
             frm.MdiParent = this.MdiParent;
             frm.Show();
-            // this.Close();
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
