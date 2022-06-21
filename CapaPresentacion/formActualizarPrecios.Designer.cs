@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formActualizarPrecios));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblLineal = new System.Windows.Forms.Label();
             this.tbLineal = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.rbPorcentual = new System.Windows.Forms.RadioButton();
+            this.lblPorcentual = new System.Windows.Forms.Label();
             this.tbPorcentual = new System.Windows.Forms.TextBox();
+            this.rbLineal = new System.Windows.Forms.RadioButton();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.rdLineal = new System.Windows.Forms.RadioButton();
-            this.rbPorcentual = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.tbDesdeArticulo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,18 +59,19 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblLineal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Actualizacion lineal:";
+            this.lblLineal.AutoSize = true;
+            this.lblLineal.Location = new System.Drawing.Point(40, 65);
+            this.lblLineal.Name = "lblLineal";
+            this.lblLineal.Size = new System.Drawing.Size(100, 13);
+            this.lblLineal.TabIndex = 3;
+            this.lblLineal.Text = "Actualizacion lineal:";
+            this.lblLineal.Click += new System.EventHandler(this.lblLineal_Click);
             // 
             // tbLineal
             // 
-            this.tbLineal.Location = new System.Drawing.Point(190, 36);
+            this.tbLineal.Location = new System.Drawing.Point(189, 62);
             this.tbLineal.Name = "tbLineal";
             this.tbLineal.Size = new System.Drawing.Size(100, 20);
             this.tbLineal.TabIndex = 5;
@@ -78,37 +79,60 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbPorcentual);
-            this.groupBox1.Controls.Add(this.rdLineal);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblPorcentual);
             this.groupBox1.Controls.Add(this.tbPorcentual);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.rbLineal);
+            this.groupBox1.Controls.Add(this.lblLineal);
             this.groupBox1.Controls.Add(this.tbLineal);
             this.groupBox1.Location = new System.Drawing.Point(15, 153);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 128);
+            this.groupBox1.Size = new System.Drawing.Size(353, 106);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de actualizacion";
             // 
-            // label2
+            // rbPorcentual
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Actualizacion porcentual (%):";
+            this.rbPorcentual.AutoSize = true;
+            this.rbPorcentual.Location = new System.Drawing.Point(20, 26);
+            this.rbPorcentual.Name = "rbPorcentual";
+            this.rbPorcentual.Size = new System.Drawing.Size(14, 13);
+            this.rbPorcentual.TabIndex = 9;
+            this.rbPorcentual.TabStop = true;
+            this.rbPorcentual.UseVisualStyleBackColor = true;
+            this.rbPorcentual.CheckedChanged += new System.EventHandler(this.rbPorcentual_CheckedChanged);
+            // 
+            // lblPorcentual
+            // 
+            this.lblPorcentual.AutoSize = true;
+            this.lblPorcentual.Location = new System.Drawing.Point(40, 28);
+            this.lblPorcentual.Name = "lblPorcentual";
+            this.lblPorcentual.Size = new System.Drawing.Size(143, 13);
+            this.lblPorcentual.TabIndex = 8;
+            this.lblPorcentual.Text = "Actualizacion porcentual (%):";
+            this.lblPorcentual.Click += new System.EventHandler(this.lblPorcentual_Click);
             // 
             // tbPorcentual
             // 
-            this.tbPorcentual.Location = new System.Drawing.Point(190, 70);
+            this.tbPorcentual.Location = new System.Drawing.Point(189, 25);
             this.tbPorcentual.Name = "tbPorcentual";
             this.tbPorcentual.Size = new System.Drawing.Size(100, 20);
-            this.tbPorcentual.TabIndex = 7;
+            this.tbPorcentual.TabIndex = 10;
+            // 
+            // rbLineal
+            // 
+            this.rbLineal.AutoSize = true;
+            this.rbLineal.Location = new System.Drawing.Point(20, 65);
+            this.rbLineal.Name = "rbLineal";
+            this.rbLineal.Size = new System.Drawing.Size(14, 13);
+            this.rbLineal.TabIndex = 4;
+            this.rbLineal.TabStop = true;
+            this.rbLineal.UseVisualStyleBackColor = true;
+            this.rbLineal.CheckedChanged += new System.EventHandler(this.rbLineal_CheckedChanged);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(403, 298);
+            this.btnAceptar.Location = new System.Drawing.Point(403, 268);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 8;
@@ -117,33 +141,13 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(484, 298);
+            this.btnCancelar.Location = new System.Drawing.Point(484, 268);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // rdLineal
-            // 
-            this.rdLineal.AutoSize = true;
-            this.rdLineal.Location = new System.Drawing.Point(21, 39);
-            this.rdLineal.Name = "rdLineal";
-            this.rdLineal.Size = new System.Drawing.Size(14, 13);
-            this.rdLineal.TabIndex = 4;
-            this.rdLineal.TabStop = true;
-            this.rdLineal.UseVisualStyleBackColor = true;
-            // 
-            // rbPorcentual
-            // 
-            this.rbPorcentual.AutoSize = true;
-            this.rbPorcentual.Location = new System.Drawing.Point(21, 71);
-            this.rbPorcentual.Name = "rbPorcentual";
-            this.rbPorcentual.Size = new System.Drawing.Size(14, 13);
-            this.rbPorcentual.TabIndex = 6;
-            this.rbPorcentual.TabStop = true;
-            this.rbPorcentual.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -186,12 +190,13 @@
             this.cbActualizarTodos.TabIndex = 1;
             this.cbActualizarTodos.Text = "Actualizar todos";
             this.cbActualizarTodos.UseVisualStyleBackColor = true;
+            this.cbActualizarTodos.CheckedChanged += new System.EventHandler(this.cbActualizarTodos_CheckedChanged);
             // 
             // formActualizarPrecios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 333);
+            this.ClientSize = new System.Drawing.Size(571, 315);
             this.Controls.Add(this.cbActualizarTodos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbHastaArticulo);
@@ -204,6 +209,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formActualizarPrecios";
             this.Text = "Actualizacion de precios";
+            this.Load += new System.EventHandler(this.formActualizarPrecios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -215,19 +221,19 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLineal;
         private System.Windows.Forms.TextBox tbLineal;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbPorcentual;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.RadioButton rbPorcentual;
-        private System.Windows.Forms.RadioButton rdLineal;
+        private System.Windows.Forms.RadioButton rbLineal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbDesdeArticulo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbHastaArticulo;
         private System.Windows.Forms.CheckBox cbActualizarTodos;
+        private System.Windows.Forms.RadioButton rbPorcentual;
+        private System.Windows.Forms.Label lblPorcentual;
+        private System.Windows.Forms.TextBox tbPorcentual;
     }
 }

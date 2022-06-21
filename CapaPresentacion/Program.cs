@@ -24,7 +24,7 @@ namespace CapaPresentacion
 
             if (OpenDetailFormOnClose)
             {
-                Application.Run(new formLogin());
+                Application.Run(new frmPrincipal());
             }
         }
     }

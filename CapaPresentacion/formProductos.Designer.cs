@@ -177,6 +177,7 @@
             this.btnActualizarPrecios.Size = new System.Drawing.Size(46, 42);
             this.btnActualizarPrecios.TabIndex = 15;
             this.btnActualizarPrecios.UseVisualStyleBackColor = true;
+            this.btnActualizarPrecios.Click += new System.EventHandler(this.btnActualizarPrecios_Click);
             // 
             // formProductos
             // 

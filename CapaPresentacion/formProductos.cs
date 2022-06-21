@@ -112,12 +112,9 @@ namespace CapaPresentacion
 
         private void botonEditarListado_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("this.IdProducto en click editar es  : " + this.IdProducto);
             formNuevoEditarProducto frm = new formNuevoEditarProducto(this.IdProducto,false);
             frm.MdiParent = this.MdiParent;
             frm.Show();
-            Console.WriteLine("Esto se deberia mostrar al cerrar el form de editar");
-            // this.Close();
         }
 
         private void dataListadoProductos_SelectionChanged(object sender, EventArgs e)
@@ -128,15 +125,12 @@ namespace CapaPresentacion
                 int selectedrowindex = dataListadoProductos.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoProductos.Rows[selectedrowindex];
                 this.IdProducto = Convert.ToInt32(selectedRow.Cells["IdPRoducto"].Value);
-                Console.WriteLine("El id producto es " + this.IdProducto);
             }
         }
 
         private void BuscarProducto()
         {
-            Console.WriteLine("this.txtBuscar.Text es " + this.txtBuscar.Text);
             this.dataListadoProductos.DataSource = objetoCN.BuscarProducto(this.txtBuscar.Text);
-            // this.OcultarColumnas();
             lblTotalProductos.Text = "Total de Registros: " + Convert.ToString(dataListadoProductos.Rows.Count);
         }
 
@@ -151,6 +145,13 @@ namespace CapaPresentacion
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             this.MostrarProductos();
+        }
+
+        private void btnActualizarPrecios_Click(object sender, EventArgs e)
+        {
+            formActualizarPrecios frm = new formActualizarPrecios();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }
