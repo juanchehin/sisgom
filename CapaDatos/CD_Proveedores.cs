@@ -87,8 +87,6 @@ namespace CapaDatos
             tabla.Clear();
             leer = comando.ExecuteReader();
             tabla.Load(leer);
-            Console.WriteLine("tabla en capa datos es : " + tabla);
-            Console.WriteLine("leer en capa datos es : " + leer.ToString());
             comando.Parameters.Clear();
             conexion.CerrarConexion();
 
@@ -180,8 +178,6 @@ namespace CapaDatos
             string rpta = "";
             try
             {
-                Console.WriteLine("Ingreso en eliminar CD_Proveedores 2");
-
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_eliminar_proveedor";
@@ -189,24 +185,18 @@ namespace CapaDatos
                 MySqlParameter pIdProveedor = new MySqlParameter();
                 pIdProveedor.ParameterName = "@pIdProveedor";
                 pIdProveedor.MySqlDbType = MySqlDbType.Int32;
-                // pIdEmpleado.Size = 60;
                 pIdProveedor.Value = Proveedor.IdProveedor;
                 comando.Parameters.Add(pIdProveedor);
 
-                //Ejecutamos nuestro comando
-                // Console.WriteLine("comando es " + comando.ExecuteScalar() );
-                // rpta = "Ok";
                 rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entro en el catch y mensaje es " + ex.Message);
                 rpta = ex.Message;
             }
             finally
             {
-                //if (conexion. == ConnectionState.Open) 
                 conexion.CerrarConexion();
             }
             comando.Parameters.Clear();
@@ -226,7 +216,6 @@ namespace CapaDatos
                 MySqlParameter pIdProveedor = new MySqlParameter();
                 pIdProveedor.ParameterName = "@pIdProveedor";
                 pIdProveedor.MySqlDbType = MySqlDbType.Int32;
-                // pIdEmpleado.Size = 60;
                 pIdProveedor.Value = Proveedor.IdProveedor;
                 comando.Parameters.Add(pIdProveedor);
 
@@ -267,13 +256,10 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-
                 rpta = ex.Message;
-                Console.WriteLine("rpta es : " + rpta);
             }
             finally
             {
-                //if (conexion. == ConnectionState.Open) 
                 conexion.CerrarConexion();
             }
             comando.Parameters.Clear();
@@ -297,8 +283,6 @@ namespace CapaDatos
 
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
-                Console.WriteLine("tabla en capa datos es : " + tabla);
-                Console.WriteLine("leer en capa datos es : " + leer.ToString());
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
 
@@ -306,9 +290,6 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entro en el catch y tabla es en capa datos" + tabla);
-                Console.WriteLine("Entro en el catch y ex es en capa datos" + ex.Message);
-
                 tabla = null;
             }
             return tabla;

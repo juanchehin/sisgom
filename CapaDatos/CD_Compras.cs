@@ -71,7 +71,6 @@ namespace CapaDatos
             MySqlParameter pIdCompra = new MySqlParameter();
             pIdCompra.ParameterName = "@pIdCompra";
             pIdCompra.MySqlDbType = MySqlDbType.Int32;
-            // pIdProducto.Size = 60;
             pIdCompra.Value = IdCompra;
             comando.Parameters.Add(pIdCompra);
 
@@ -116,15 +115,9 @@ namespace CapaDatos
                 MySqlParameter pCantidad = new MySqlParameter();
                 pCantidad.ParameterName = "@pCantidad";
                 pCantidad.MySqlDbType = MySqlDbType.Int32;  // Ver por que esta definido como string
-                // pCantidad.Size = 60;
                 pCantidad.Value = Compra.Cantidad;
                 comando.Parameters.Add(pCantidad);
 
-
-
-                
-
-                // Console.WriteLine("el comando es : " + comando.ExecuteScalar());
                 //Ejecutamos nuestro comando
 
                 // ExecuteNonQuery devuelve el numero de filas afectadas
@@ -134,7 +127,6 @@ namespace CapaDatos
                 if (rpta == "Ok")
                 {
                     rpta = "Ok";
-                    // return rpta;
                 }
 
             }
@@ -146,7 +138,7 @@ namespace CapaDatos
             {
                 conexion.CerrarConexion();
             }
-            Console.WriteLine("rpta es : " + rpta);
+
             return rpta;
 
         }
@@ -163,7 +155,6 @@ namespace CapaDatos
                 MySqlParameter pIdCompra = new MySqlParameter();
                 pIdCompra.ParameterName = "@pIdCompra";
                 pIdCompra.MySqlDbType = MySqlDbType.Int32;
-                // pIdEmpleado.Size = 60;
                 pIdCompra.Value = Compra.IdCompra;
                 comando.Parameters.Add(pIdCompra);
 
@@ -179,7 +170,6 @@ namespace CapaDatos
             }
             finally
             {
-                //if (conexion. == ConnectionState.Open) 
                 conexion.CerrarConexion();
             }
             comando.Parameters.Clear();

@@ -57,7 +57,6 @@ namespace CapaDatos
             tabla.Clear();
             leer = comando.ExecuteReader();
             tabla.Load(leer);
-            // conexion.CerrarConexion();
             return tabla;
 
         }
@@ -80,7 +79,6 @@ namespace CapaDatos
                 pTrabajo.Value = Trabajo.Trabajo;
                 comando.Parameters.Add(pTrabajo);
 
-                // Console.WriteLine("pNombre es : " + pNombre.Value);
 
                 MySqlParameter pPrecioUnitario = new MySqlParameter();
                 pPrecioUnitario.ParameterName = "@pPrecioUnitario";
@@ -90,8 +88,6 @@ namespace CapaDatos
                 comando.Parameters.Add(pPrecioUnitario);
 
                 rpta = (string)comando.ExecuteScalar();
-
-                Console.WriteLine("rta es : ..... **** " + rpta);
 
                 if (rpta == "El Trabajo es obligatorio.")
                 {
@@ -106,7 +102,6 @@ namespace CapaDatos
                 rpta = "OK";
                 comando.Parameters.Clear();
                 return rpta;
-                // rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el trabajo";
 
 
             }
@@ -172,8 +167,6 @@ namespace CapaDatos
 
             leer = comando.ExecuteReader();
             tabla.Load(leer);
-            // Console.WriteLine("tabla en capa datos es : " + tabla);
-            // Console.WriteLine("leer en capa datos es : " + leer.ToString());
             comando.Parameters.Clear();
             conexion.CerrarConexion();
 
@@ -227,13 +220,10 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-
                 rpta = ex.Message;
-                Console.WriteLine("rpta es : " + rpta);
             }
             finally
             {
-                //if (conexion. == ConnectionState.Open) 
                 conexion.CerrarConexion();
             }
             comando.Parameters.Clear();
@@ -257,8 +247,6 @@ namespace CapaDatos
 
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
-                Console.WriteLine("tabla en capa datos es : " + tabla);
-                Console.WriteLine("leer en capa datos es : " + leer.ToString());
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
 
@@ -266,9 +254,6 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entro en el catch y tabla es en capa datos" + tabla);
-                Console.WriteLine("Entro en el catch y ex es en capa datos" + ex.Message);
-
                 tabla = null;
             }
             return tabla;
