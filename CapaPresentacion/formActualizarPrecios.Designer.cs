@@ -68,6 +68,7 @@
             this.lblLineal.TabIndex = 3;
             this.lblLineal.Text = "Actualizacion lineal:";
             this.lblLineal.Click += new System.EventHandler(this.lblLineal_Click);
+            this.lblLineal.DoubleClick += new System.EventHandler(this.lblLineal_DoubleClick);
             // 
             // tbLineal
             // 
@@ -100,7 +101,7 @@
             this.rbPorcentual.TabIndex = 9;
             this.rbPorcentual.TabStop = true;
             this.rbPorcentual.UseVisualStyleBackColor = true;
-            this.rbPorcentual.CheckedChanged += new System.EventHandler(this.rbPorcentual_CheckedChanged);
+            this.rbPorcentual.Click += new System.EventHandler(this.rbPorcentual_Click);
             // 
             // lblPorcentual
             // 
@@ -111,6 +112,7 @@
             this.lblPorcentual.TabIndex = 8;
             this.lblPorcentual.Text = "Actualizacion porcentual (%):";
             this.lblPorcentual.Click += new System.EventHandler(this.lblPorcentual_Click);
+            this.lblPorcentual.DoubleClick += new System.EventHandler(this.lblPorcentual_DoubleClick);
             // 
             // tbPorcentual
             // 
@@ -128,7 +130,7 @@
             this.rbLineal.TabIndex = 4;
             this.rbLineal.TabStop = true;
             this.rbLineal.UseVisualStyleBackColor = true;
-            this.rbLineal.CheckedChanged += new System.EventHandler(this.rbLineal_CheckedChanged);
+            this.rbLineal.Click += new System.EventHandler(this.rbLineal_Click);
             // 
             // btnAceptar
             // 

@@ -27,16 +27,6 @@ namespace CapaPresentacion
             this.Close();                        
         }
 
-        private void rbLineal_CheckedChanged(object sender, EventArgs e)
-        {
-            tbPorcentual.ReadOnly = true;
-            tbLineal.ReadOnly = false;
-        }
-        private void rbPorcentual_CheckedChanged(object sender, EventArgs e)
-        {
-            tbLineal.ReadOnly = true;
-            tbPorcentual.ReadOnly = false;
-        }
 
         private void cbActualizarTodos_CheckedChanged(object sender, EventArgs e)
         {
@@ -55,15 +45,18 @@ namespace CapaPresentacion
 
         private void lblPorcentual_Click(object sender, EventArgs e)
         {
-            tbLineal.ReadOnly = false;
-            tbPorcentual.ReadOnly = true;
+            tbLineal.ReadOnly = true;
+            tbPorcentual.ReadOnly = false;
+            tbPorcentual.Focus();
             rbPorcentual.Checked = true;
+
         }
 
         private void lblLineal_Click(object sender, EventArgs e)
         {
-            tbPorcentual.ReadOnly = false;
-            tbLineal.ReadOnly = true;
+            tbPorcentual.ReadOnly = true;
+            tbLineal.ReadOnly = false;
+            tbLineal.Focus();
             rbLineal.Checked = true;
         }
 
@@ -252,6 +245,38 @@ namespace CapaPresentacion
         {
             MessageBox.Show(mensaje, "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void lblPorcentual_DoubleClick(object sender, EventArgs e)
+        {
+            tbLineal.ReadOnly = true;
+            tbPorcentual.ReadOnly = false;
+            tbPorcentual.Focus();
+            rbPorcentual.Checked = true;
+        }
+
+        private void lblLineal_DoubleClick(object sender, EventArgs e)
+        {
+            tbPorcentual.ReadOnly = true;
+            tbLineal.ReadOnly = false;
+            tbLineal.Focus();
+            rbLineal.Checked = true;
+        }
+
+        private void rbPorcentual_Click(object sender, EventArgs e)
+        {
+            tbLineal.ReadOnly = true;
+            tbPorcentual.ReadOnly = false;
+            tbPorcentual.Focus();
+            rbPorcentual.Checked = true;
+        }
+
+        private void rbLineal_Click(object sender, EventArgs e)
+        {
+            tbPorcentual.ReadOnly = true;
+            tbLineal.ReadOnly = false;
+            tbLineal.Focus();
+            rbLineal.Checked = true;
         }
     }
 }
