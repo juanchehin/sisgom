@@ -47,6 +47,8 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,11 +208,31 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(368, 424);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Configuracion";
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
+            this.btnConfiguracion.Location = new System.Drawing.Point(332, 302);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(147, 114);
+            this.btnConfiguracion.TabIndex = 20;
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnConfiguracion);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -257,5 +279,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.ToolTip ttAyuda;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnConfiguracion;
     }
 }

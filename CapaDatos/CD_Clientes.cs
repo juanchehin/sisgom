@@ -250,8 +250,6 @@ namespace CapaDatos
 
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
-                Console.WriteLine("tabla en capa datos es : " + tabla);
-                Console.WriteLine("leer en capa datos es : " + leer.ToString());
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
 

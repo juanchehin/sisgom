@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="CN_Clientes.cs" />
     <Compile Include="CN_Compras.cs" />
+    <Compile Include="CN_Configuracion.cs" />
     <Compile Include="CN_Empleados.cs" />
     <Compile Include="CN_Productos.cs" />
     <Compile Include="CN_Proveedores.cs" />

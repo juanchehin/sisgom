@@ -68,6 +68,7 @@
     <Compile Include="CD_Clientes.cs" />
     <Compile Include="CD_Compras.cs" />
     <Compile Include="CD_Conexion.cs" />
+    <Compile Include="CD_Configuraciones.cs" />
     <Compile Include="CD_Empleados.cs" />
     <Compile Include="CD_Productos.cs" />
     <Compile Include="CD_Proveedores.cs" />

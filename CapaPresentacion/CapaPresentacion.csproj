@@ -68,6 +68,7 @@
     <ApplicationIcon>logo - copia.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -100,6 +101,12 @@
     <Compile Include="formAgregarTrabajoEmpleado.Designer.cs">
       <DependentUpon>formAgregarTrabajoEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="formBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formBackup.Designer.cs">
+      <DependentUpon>formBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="formClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +118,12 @@
     </Compile>
     <Compile Include="formCompras.Designer.cs">
       <DependentUpon>formCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formConfiguraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formConfiguraciones.Designer.cs">
+      <DependentUpon>formConfiguraciones.cs</DependentUpon>
     </Compile>
     <Compile Include="formEmpleados.cs">
       <SubType>Form</SubType>
@@ -222,11 +235,17 @@
     <EmbeddedResource Include="formAgregarTrabajoEmpleado.resx">
       <DependentUpon>formAgregarTrabajoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formBackup.resx">
+      <DependentUpon>formBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formClientes.resx">
       <DependentUpon>formClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formCompras.resx">
       <DependentUpon>formCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formConfiguraciones.resx">
+      <DependentUpon>formConfiguraciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEmpleados.resx">
       <DependentUpon>formEmpleados.cs</DependentUpon>
