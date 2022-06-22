@@ -223,7 +223,7 @@ namespace CapaPresentacion
                                     return;
                                 }
                                 Decimal dValue = -1;
-                                decimal.TryParse(this.tbPorcentual.Text, out dValue);
+                                decimal.TryParse(this.tbLineal.Text, out dValue);
                                 rpta = CN_Productos.ActualizacionLineal(dValue, Convert.ToInt32(tbDesdeArticulo.Text) , Convert.ToInt32(tbHastaArticulo.Text) );
                                 if (rpta.Equals("OK"))
                                 {

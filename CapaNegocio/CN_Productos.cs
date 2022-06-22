@@ -45,8 +45,6 @@ namespace CapaNegocio
 
             DataTable tabla = new DataTable();
             tabla = objetoCD.MostrarProducto(IdProducto);
-            Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
-            Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
         public static string Eliminar(int IdProducto)
