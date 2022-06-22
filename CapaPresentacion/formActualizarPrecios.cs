@@ -69,7 +69,17 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            string message = "Esta a punto de actualizar los precios.¿Desea confirmar la operacion?";
+            string caption = "Atencion";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
 
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.No)
+            {
+                this.Close();
+                return;
+            }
             string rpta = "";
             // Validaciones
             try
@@ -151,8 +161,14 @@ namespace CapaPresentacion
                 // ======= Caso actualizar por rango de productos ============
                 else
                 {
+                    // Hasta es menor que desde
+                    if (Convert.ToInt32(tbHastaArticulo.Text) <= Convert.ToInt32(tbDesdeArticulo.Text))
+                    {
+                        MensajeError("Rango incorrecto");
+                        return;
+                    }
                     // ======= Caso actualizar por rango de productos y porcentual ============
-                    if (rbPorcentual.Enabled)
+                    if (rbPorcentual.Checked)
                     {
                         if (this.tbPorcentual.Text == string.Empty || this.tbDesdeArticulo.Text == string.Empty || this.tbHastaArticulo.Text == string.Empty)
                         {
@@ -188,7 +204,7 @@ namespace CapaPresentacion
                         }
                     }
                     // ======= Caso actualizar por rango de productos y lineal ============
-                    if (rbLineal.Enabled)
+                    if (rbLineal.Checked)
                     {
                         // Llamar capa negocio correspondiente
                         if (rbLineal.Enabled)
