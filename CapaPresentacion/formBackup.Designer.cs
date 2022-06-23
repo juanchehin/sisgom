@@ -34,7 +34,12 @@
             this.btnGenerarBackup = new System.Windows.Forms.Button();
             this.txtRuta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelCargando = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelCargando.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -87,11 +92,42 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Ruta de la copia de seguridad : ";
             // 
+            // panelCargando
+            // 
+            this.panelCargando.Controls.Add(this.label3);
+            this.panelCargando.Controls.Add(this.pictureBox2);
+            this.panelCargando.Location = new System.Drawing.Point(26, 25);
+            this.panelCargando.Name = "panelCargando";
+            this.panelCargando.Size = new System.Drawing.Size(381, 160);
+            this.panelCargando.TabIndex = 11;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 57);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(81, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(266, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Cargango,espere un momento...";
+            // 
             // formBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 274);
+            this.Controls.Add(this.panelCargando);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtRuta);
             this.Controls.Add(this.btnGenerarBackup);
@@ -101,6 +137,9 @@
             this.Name = "formBackup";
             this.Text = "Backup";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelCargando.ResumeLayout(false);
+            this.panelCargando.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +152,8 @@
         private System.Windows.Forms.Button btnGenerarBackup;
         private System.Windows.Forms.TextBox txtRuta;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelCargando;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

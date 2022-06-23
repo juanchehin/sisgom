@@ -12,8 +12,8 @@ namespace CapaPresentacion
         public formBackup()
         {
             InitializeComponent();
+            panelCargando.Visible = false;
         }
-		private Thread Hilo;
 		private void textBox1_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog ofd = new FolderBrowserDialog();
@@ -28,9 +28,10 @@ namespace CapaPresentacion
         {
             if (!string.IsNullOrEmpty(txtRuta.Text))
             {
-                //Hilo = new Thread(new ThreadStart(executa));
+                panelCargando.Visible = true;
                 this.executa();
                 this.Close();
+                panelCargando.Visible = false;
             }
             else
             {
@@ -42,7 +43,6 @@ namespace CapaPresentacion
 
 		public void executa()
 		{
-            string rpta = "";
 			string miCarpeta = "backup_sisgom_" + DateTime.Now.Day + "_" + (DateTime.Now.Month) + "_" + DateTime.Now.Year + "_" + Convert.ToDateTime(DateAndTime.TimeOfDay).Hour + "_" + Convert.ToDateTime(DateAndTime.TimeOfDay).Minute;
 			
 			if (!Directory.Exists(txtRuta.Text + miCarpeta))
