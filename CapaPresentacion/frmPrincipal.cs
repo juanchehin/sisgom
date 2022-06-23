@@ -79,5 +79,11 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            formConfiguraciones frm = new formConfiguraciones();
+            frm.Show();
+        }
     }
 }

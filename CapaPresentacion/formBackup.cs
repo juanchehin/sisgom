@@ -1,20 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
-
-using System.Collections.Generic;
-
 using System.IO;
-using System.Management;
-using System.Xml;
 using Microsoft.VisualBasic;
 
 namespace CapaPresentacion
@@ -40,19 +28,13 @@ namespace CapaPresentacion
         {
             if (!string.IsNullOrEmpty(txtRuta.Text))
             {
-                Hilo = new Thread(new ThreadStart(executa));
-                txtRuta.BackColor = Color.White;
-                //PictureBox1.Visible = true;
-                //Panel1.Enabled = false;
-                //lbldirectorio.Visible = false;
-                //Panel2.Visible = false;
-                //Hilo.Start();
-                //acaba = false;
-                //Timer1.Enabled = true;
+                //Hilo = new Thread(new ThreadStart(executa));
+                this.executa();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Selecciona una Ruta donde Guardar las Copias de Seguridad", "Seleccione Ruta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona una ruta donde guardar las copias de seguridad", "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtRuta.Focus();
                 txtRuta.BackColor = Color.FromArgb(255, 255, 192);
             }
@@ -60,10 +42,9 @@ namespace CapaPresentacion
 
 		public void executa()
 		{
-			//LeerXML_Nombre_De_software();
-			//LeerXML_base_de_datos();
-			string miCarpeta = "backup_sisgom" + DateTime.Now.Day + "_" + (DateTime.Now.Month) + "_" + DateTime.Now.Year + "_" + Convert.ToDateTime(DateAndTime.TimeOfDay).Hour + "_" + Convert.ToDateTime(DateAndTime.TimeOfDay).Minute;
-			MessageBox.Show($"miCarpeta executa() es : {miCarpeta}");
+            string rpta = "";
+			string miCarpeta = "backup_sisgom_" + DateTime.Now.Day + "_" + (DateTime.Now.Month) + "_" + DateTime.Now.Year + "_" + Convert.ToDateTime(DateAndTime.TimeOfDay).Hour + "_" + Convert.ToDateTime(DateAndTime.TimeOfDay).Minute;
+			
 			if (!Directory.Exists(txtRuta.Text + miCarpeta))
 			{
 				Directory.CreateDirectory(txtRuta.Text + miCarpeta);
@@ -76,16 +57,32 @@ namespace CapaPresentacion
 
             try
             {
-                string v_nombre_respaldo = miCarpeta + ".bak";
+                string v_nombre_respaldo = ruta_completa + ".sql";
 
-                CapaNegocio.CN_Configuracion.Backup();
+                if(CapaNegocio.CN_Configuracion.Backup(v_nombre_respaldo) == "Ok")
+                {
+                    MensajeOk("Backup creado con exito");
+                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MensajeError(ex.Message);
             }
 
 		}
-	}
+
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
 }

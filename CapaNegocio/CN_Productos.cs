@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// Agregados
-using CapaDatos;
+﻿using CapaDatos;
 using System.Data;
-using MySql.Data.MySqlClient;
 
 
 namespace CapaNegocio

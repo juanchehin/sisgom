@@ -225,6 +225,7 @@
             this.btnConfiguracion.Size = new System.Drawing.Size(147, 114);
             this.btnConfiguracion.TabIndex = 20;
             this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // frmPrincipal
             // 

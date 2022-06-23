@@ -6,11 +6,12 @@ namespace CapaDatos
 {
     public class CD_Conexion
     {
-        MySqlConnection Con = new MySqlConnection("datasource =localhost;username = root;password = '';database=sisgom");
+        public static string cadenaConexion = "datasource =localhost;username = root;password = '';database=sisgom";
+        MySqlConnection Con = new MySqlConnection(cadenaConexion);
 
         public CD_Conexion()
         {
-            AbrirConexion();
+            //AbrirConexion();
         }
         public MySqlConnection AbrirConexion()
         {
@@ -37,6 +38,11 @@ namespace CapaDatos
                 MessageBox.Show(e.Message);
                 return Con;
             }
+        }
+
+        public string dame_cadena()
+        {
+            return cadenaConexion;
         }
     }
 

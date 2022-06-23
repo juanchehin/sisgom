@@ -16,5 +16,11 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            formBackup frm = new formBackup();
+            frm.Show();
+        }
     }
 }
