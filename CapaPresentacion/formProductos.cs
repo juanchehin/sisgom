@@ -31,7 +31,6 @@ namespace CapaPresentacion
         public void MostrarProductos()
         {
             dataListadoProductos.DataSource = objetoCN.MostrarProd();
-            dataListadoProductos.Columns[0].Visible = false;
             lblTotalProductos.Text = "Total de Registros: " + Convert.ToString(dataListadoProductos.Rows.Count);
         }
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -28,8 +28,6 @@ namespace CapaPresentacion
             InitializeComponent();
             this.IdProducto = parametro;
             this.bandera = IsNuevoEditar;
-            // this.ActiveControl = txtNombre;
-            // this.txtNombre.Focus();
 
         }
 
