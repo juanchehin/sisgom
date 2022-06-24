@@ -32,13 +32,23 @@ namespace CapaPresentacion.Configuraciones
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            result = MessageBox.Show(message, caption, buttons);
-            if (result == DialogResult.No)
-            {
-                this.Close();
-            }
+            
             if (!string.IsNullOrEmpty(txtRuta.Text))
             {
+                if (!File.Exists(txtRuta.Text))
+                {
+                    MensajeError("Archivo inexistente");
+                    return;
+                }
+
+                //
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == DialogResult.No)
+                {
+                    this.Close();
+                }
+
+                // 
                 panelCargando.Visible = true;
                 this.executa();
                 this.Close();
@@ -54,11 +64,7 @@ namespace CapaPresentacion.Configuraciones
 
         public void executa()
         {
-            if (!File.Exists(txtRuta.Text))
-            {
-                MensajeError("Archivo inexistente");
-                return;
-            }
+            
 
             string ruta_completa = txtRuta.Text;
 
