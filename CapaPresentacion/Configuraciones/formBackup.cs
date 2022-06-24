@@ -52,9 +52,6 @@ namespace CapaPresentacion
 
 			string ruta_completa = txtRuta.Text + "\\" + miCarpeta;
 
-            //string SubCarpeta = ruta_completa + "\\Respaldo_al_" + DateTime.Now.Day + "_" + Microsoft.VisualBasic.DateAndTime.MonthName(DateTime.Now.Month) + "_" + DateTime.Now.Year + "_" + Convert.ToDateTime(Microsoft.VisualBasic.DateAndTime.TimeOfDay).Hour + "_" + Convert.ToDateTime(Microsoft.VisualBasic.DateAndTime.TimeOfDay).Minute;
-
-
             try
             {
                 string v_nombre_respaldo = ruta_completa + ".sql";
@@ -75,9 +72,7 @@ namespace CapaPresentacion
         private void MensajeOk(string mensaje)
         {
             MessageBox.Show(mensaje, "SisGom", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
-
 
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)

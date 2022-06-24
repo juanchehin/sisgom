@@ -35,8 +35,8 @@
             this.txtRuta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelCargando = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCargando.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -96,10 +96,20 @@
             // 
             this.panelCargando.Controls.Add(this.label3);
             this.panelCargando.Controls.Add(this.pictureBox2);
-            this.panelCargando.Location = new System.Drawing.Point(26, 25);
+            this.panelCargando.Location = new System.Drawing.Point(26, 56);
             this.panelCargando.Name = "panelCargando";
             this.panelCargando.Size = new System.Drawing.Size(381, 160);
             this.panelCargando.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(81, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(266, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Cargango,espere un momento...";
             // 
             // pictureBox2
             // 
@@ -111,16 +121,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(266, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Cargango,espere un momento...";
             // 
             // formBackup
             // 

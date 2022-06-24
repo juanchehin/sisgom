@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaPresentacion.Configuraciones;
+using System;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -20,6 +14,12 @@ namespace CapaPresentacion
         private void btnBackup_Click(object sender, EventArgs e)
         {
             formBackup frm = new formBackup();
+            frm.Show();
+        }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            formImportacionBD frm = new formImportacionBD();
             frm.Show();
         }
     }

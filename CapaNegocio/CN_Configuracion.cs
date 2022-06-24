@@ -13,6 +13,12 @@ namespace CapaNegocio
 
             return Obj.Backup(file);
         }
+        public static string Restore(string ruta)
+        {
+            CD_Configuraciones Obj = new CD_Configuraciones();
+
+            return Obj.Restore(ruta);
+        }
 
 
     }

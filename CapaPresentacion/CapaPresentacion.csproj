@@ -89,6 +89,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuraciones\formImportacionBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\formImportacionBD.Designer.cs">
+      <DependentUpon>formImportacionBD.cs</DependentUpon>
+    </Compile>
     <Compile Include="formActualizarPrecios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,10 +107,10 @@
     <Compile Include="formAgregarTrabajoEmpleado.Designer.cs">
       <DependentUpon>formAgregarTrabajoEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="formBackup.cs">
+    <Compile Include="Configuraciones\formBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formBackup.Designer.cs">
+    <Compile Include="Configuraciones\formBackup.Designer.cs">
       <DependentUpon>formBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="formClientes.cs">
@@ -119,10 +125,10 @@
     <Compile Include="formCompras.Designer.cs">
       <DependentUpon>formCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="formConfiguraciones.cs">
+    <Compile Include="Configuraciones\formConfiguraciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formConfiguraciones.Designer.cs">
+    <Compile Include="Configuraciones\formConfiguraciones.Designer.cs">
       <DependentUpon>formConfiguraciones.cs</DependentUpon>
     </Compile>
     <Compile Include="formEmpleados.cs">
@@ -229,13 +235,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Configuraciones\formImportacionBD.resx">
+      <DependentUpon>formImportacionBD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formActualizarPrecios.resx">
       <DependentUpon>formActualizarPrecios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formAgregarTrabajoEmpleado.resx">
       <DependentUpon>formAgregarTrabajoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formBackup.resx">
+    <EmbeddedResource Include="Configuraciones\formBackup.resx">
       <DependentUpon>formBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formClientes.resx">
@@ -244,7 +253,7 @@
     <EmbeddedResource Include="formCompras.resx">
       <DependentUpon>formCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formConfiguraciones.resx">
+    <EmbeddedResource Include="Configuraciones\formConfiguraciones.resx">
       <DependentUpon>formConfiguraciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEmpleados.resx">
