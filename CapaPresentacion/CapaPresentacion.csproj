@@ -24,10 +24,10 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://juanchehin.github.io/CR/</SupportUrl>
-    <ProductName>SisGom </ProductName>
-    <PublisherName>SisGom </PublisherName>
-    <SuiteName>SisGom </SuiteName>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ProductName>SisGom</ProductName>
+    <PublisherName>SisGom</PublisherName>
+    <SuiteName>SisGom</SuiteName>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

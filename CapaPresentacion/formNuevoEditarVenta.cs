@@ -58,7 +58,6 @@ namespace CapaPresentacion
         {
             respuesta = objetoCN.MostrarVenta(IdVenta);
 
-            Console.WriteLine("Respuesta es ; " + respuesta.Rows.Count);
             foreach (DataRow row in respuesta.Rows)
             {
                 IdVenta = Convert.ToInt32(row["IdVenta"]);
@@ -92,8 +91,7 @@ namespace CapaPresentacion
             cbProductos.DataSource = productos;
 
             // cbTrabajos.ValueMember = cbTrabajos;
-            Console.WriteLine(" cbTrabajos.ValueMember es  " + cbProductos.ValueMember);
-            cbProductos.DisplayMember = "Producto";
+            cbProductos.DisplayMember = "ProductoPrecio";
             cbProductos.ValueMember = "IdProducto";
 
             this.productoActual = cbProductos.ValueMember.ToString();
@@ -181,7 +179,8 @@ namespace CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = CN_Ventas.Insertar(this.cbProductos.Text, this.cbClientes.Text, this.IdEmpleado, this.txtCantidad.Text);
+                        string subcadenaProducto = this.cbProductos.Text.Substring(0, this.cbProductos.Text.IndexOf(" - $"));
+                        rpta = CN_Ventas.Insertar(subcadenaProducto, this.cbClientes.Text, this.IdEmpleado, this.txtCantidad.Text);
                     }
                     else
                     {
@@ -242,7 +241,6 @@ namespace CapaPresentacion
                 int selectedrowindex = dataListadoEmpleados.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoEmpleados.Rows[selectedrowindex];
                 this.IdEmpleado = Convert.ToInt32(selectedRow.Cells["IdEmpleado"].Value);
-                Console.WriteLine("El this.IdEmpleado es " + this.IdEmpleado);
             }
         }
 
